@@ -16,12 +16,17 @@ export class AuthService{
         email: dto.email,
         hash
       },
+      /*
       select: {
         id: true,
         email: true,
         createdAt: true
       }
+      */
     });
+
+    delete user.hash;   //Removes only the hash instead of the big select
+
     return user;
   }
 
